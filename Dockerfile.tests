@@ -1,0 +1,9 @@
+FROM python:latest
+
+WORKDIR /usr/app/src
+
+COPY requirements.tests.txt ./
+
+RUN pip install -r requirements.tests.txt
+
+ENTRYPOINT [ "python", "-m", "unittest" ]
